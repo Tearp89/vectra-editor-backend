@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth-routes');
 
 const app = express();
-const AUTH_SERVICE_PORT = 3002;
-const MONGO_URI = 'mongodb://mongo:27017/authServiceDB';
+const AUTH_SERVICE_PORT = process.env.AUTH_SERVICE_PORT || 3002;
+const MONGO_URI = process.env.MONGO_URI;
 
 app.use(express.json());
 

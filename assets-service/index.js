@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const ASSETS_SERVICE_PORT = 3003;
+const ASSETS_SERVICE_PORT = process.env.ASSETS_SERVICE_PORT || 3003;
 
 const UPLOAD_DIR = path.join(__dirname, 'uploads');
 
