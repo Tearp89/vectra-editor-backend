@@ -4,7 +4,7 @@ const authRoutes = require('./routes/auth-routes');
 
 const app = express();
 const AUTH_SERVICE_PORT = 3002;
-const MONGO_URI = 'mongodb://localhost:27017/authServiceDB';
+const MONGO_URI = 'mongodb://mongo:27017/authServiceDB';
 
 app.use(express.json());
 
