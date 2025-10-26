@@ -1,5 +1,5 @@
 {
-  "name": "drawings-service",
+  "name": "gateway-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.12.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mongoose": "^8.19.2"
+    "form-data": "^4.0.4",
+    "multer": "^2.0.2"
   }
 }

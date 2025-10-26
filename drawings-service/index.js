@@ -5,7 +5,7 @@ const drawingRoutes = require('./routes/drawings-routes');
 
 const app = express();
 const DRAWINGS_SERVICE_PORT = 3001;
-const MONGO_URI = 'mongodb://localhost:27017/drawingsServiceDB';
+const MONGO_URI = 'mongodb://mongo:27017/drawingsServiceDB';
 
 app.use(cors());
 app.use(express.json());
