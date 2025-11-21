@@ -13,6 +13,11 @@ const DrawingSchema = new mongoose.Schema({
         trim: true
     },
 
+    backgroundUrl: {
+        type: String, 
+        default: 'none' // Por defecto, sin imagen de fondo
+    },
+    
     svgContent: {
         type: String, 
         required: true

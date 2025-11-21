@@ -10,7 +10,7 @@ const generateToken = (id) => {
 };
 
 
-exports.registerUser = async (requestAnimationFrame, res) => {
+exports.registerUser = async (req, res) => {
     const {username, password} = req.body;
 
     try {
