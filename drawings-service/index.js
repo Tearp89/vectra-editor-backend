@@ -4,8 +4,8 @@ const cors = require('cors');
 const drawingRoutes = require('./routes/drawings-routes');
 
 const app = express();
-const DRAWINGS_SERVICE_PORT = 3001;
-const MONGO_URI = 'mongodb://mongo:27017/drawingsServiceDB';
+const DRAWINGS_SERVICE_PORT = process.env.DRAWINGS_SERVICE_PORT || 3001;
+const MONGO_URI = process.env.MONGO_URI;
 
 app.use(cors());
 app.use(express.json());

@@ -17,10 +17,10 @@ services:
     container_name: auth-service
     restart: always
     environment:
-      MONGO_URI: mongodb://mongo:27017/authServiceDB
-      JWT_SECRET: TU_SECRETO_SEGURO_AQUI
+      MONGO_URI: ${AUTH_MONGO_URI}
+      JWT_SECRET: ${JWT_SECRET}
     expose:
-      - "3002" 
+      - "${AUTH_PORT}" 
     depends_on:
       - mongo
     networks:
@@ -31,9 +31,9 @@ services:
     container_name: drawings-service
     restart: always
     environment:
-      MONGO_URI: mongodb://mongo:27017/drawingsServiceDB
+      MONGO_URI: ${DRAWINGS_MONGO_URI}
     expose:
-      - "3001"
+      - "{DRAWINGS_PORT}"
     depends_on:
       - mongo
     networks:

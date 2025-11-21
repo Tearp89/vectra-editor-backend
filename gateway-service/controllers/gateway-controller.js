@@ -113,3 +113,17 @@ exports.loadDrawingById = async (req, res) => {
         res.status(status).json(error.response.data || { message: 'Error de conexión con Drawings Service' });
     }
 };
+
+exports.updateDrawing = async (req, res) => {
+    const drawingId = req.params.id; 
+    
+    const payload = { ...req.body, userId: req.userId }; 
+    
+    try {
+        const response = await axios.put(`${DRAWINGS_SERVICE_URL}/drawings/${drawingId}`, payload);
+        res.status(response.status).json(response.data);
+    } catch (error) {
+        const status = error.response ? error.response.status : 500;
+        res.status(status).json(error.response.data || { message: 'Error de conexión o recurso no encontrado en Drawings Service' });
+    }
+};
