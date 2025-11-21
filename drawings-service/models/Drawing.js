@@ -15,7 +15,7 @@ const DrawingSchema = new mongoose.Schema({
 
     backgroundUrl: {
         type: String, 
-        default: 'none' // Por defecto, sin imagen de fondo
+        default: 'none' 
     },
     
     svgContent: {

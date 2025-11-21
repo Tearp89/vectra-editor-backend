@@ -115,17 +115,14 @@ exports.loadDrawingById = async (req, res) => {
 };
 
 exports.updateDrawing = async (req, res) => {
-    const drawingId = req.params.id; // ID viene de la URL
+    const drawingId = req.params.id; 
     
-    // El userId fue inyectado por el middleware 'protect'
     const payload = { ...req.body, userId: req.userId }; 
     
     try {
-        // Llama al Drawings Service con el método PUT y el payload completo
         const response = await axios.put(`${DRAWINGS_SERVICE_URL}/drawings/${drawingId}`, payload);
         res.status(response.status).json(response.data);
     } catch (error) {
-        // Reenvía el error, incluyendo el 404 del Drawings Service si falló la búsqueda
         const status = error.response ? error.response.status : 500;
         res.status(status).json(error.response.data || { message: 'Error de conexión o recurso no encontrado en Drawings Service' });
     }
